@@ -37,6 +37,7 @@ jobs:
     - name: Test with pytest
       run: |
         pytest
+    - name: Generate report with lizard
       run: |
         lizard > lizard-relatório.txt
         git add lizard-relatório.txt
