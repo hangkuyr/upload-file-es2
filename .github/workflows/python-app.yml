@@ -34,17 +34,17 @@ jobs:
         flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
         # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
+
     - name: Test with pytest
       run: |
         pytest
+
     - name: Generate report with lizard
-      run: |
-        lizard > lizard-relatório.txt
-        git config --local user.name  ${{ github.actor }}
-        git add lizard-relatório.txt
-        git commit -m "Auto generated lizard report"
-    - name: Push changes  # push the output folder to your repo
-          uses: ad-m/github-push-action@main
-          with:
-            github_token: ${{ secrets.GITHUB_TOKEN }}
-            force: true   
+      run: lizard > lizard-relatório.txt
+
+    - name: Update resources
+      uses: test-room-7/action-update-file@v1
+      with:
+          file-path: lizard-relatório.txt
+          commit-msg: Auto generated lizard report
+          github-token: ${{ secrets.GITHUB_TOKEN }}    
