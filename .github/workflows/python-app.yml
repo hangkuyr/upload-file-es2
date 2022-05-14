@@ -3,7 +3,7 @@
 
 name: Python application
 
-permissions: read-all|write-all
+permissions: write-all
 
 on:
   push:
