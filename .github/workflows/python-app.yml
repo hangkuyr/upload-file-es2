@@ -40,6 +40,11 @@ jobs:
     - name: Generate report with lizard
       run: |
         lizard > lizard-relatório.txt
+        git config --local user.name  ${{ github.actor }}
         git add lizard-relatório.txt
         git commit -m "Auto generated lizard report"
-        git push
+    - name: Push changes  # push the output folder to your repo
+          uses: ad-m/github-push-action@main
+          with:
+            github_token: ${{ secrets.GITHUB_TOKEN }}
+            force: true   
