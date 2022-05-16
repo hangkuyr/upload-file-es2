@@ -1,4 +1,4 @@
-from pch import*
+from app import*
 
 @app.errorhandler(404)
 def not_found(e):

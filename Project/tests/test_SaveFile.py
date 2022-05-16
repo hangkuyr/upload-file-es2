@@ -1,10 +1,12 @@
 from includes import*
-from saveFile import*
+from db import*
 
 def test_SaveFile():
-	id = 'testFile'
-	content = b'hello'
-	SaveFile(id, content)
-	with open(PRIV_DIR + id, 'rb') as f:
-		writtenContent = f.read()
-		assert writtenContent == content
+	id = 'id teste'
+	filename = 'teste.txt'
+	data = b'teste bytes'
+	title = 'título teste'
+	desc = 'desc teste'
+	SaveFileImpl(id, filename, data, title, desc)
+	d = TryReadContents(id)
+	assert d['title'] == title
