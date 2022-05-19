@@ -2,6 +2,7 @@ PAGES_DIRECTORY = 'pages'
 
 from app import*
 from db import*
+from constants import*
 
 # importar automaticamente os arquivos escritos em \pages
 import os, sys
@@ -11,6 +12,5 @@ for fileName in os.listdir(PAGES_ABSOLUTE_DIRECTORY):
 	if fileName[-3:] == '.py':
 		exec('from ' + fileName[:-3] + ' import*')
 
-InitDB()
 app.run(port=80, debug=True)
-TerminateDB()
+db.save(DB_FILE)

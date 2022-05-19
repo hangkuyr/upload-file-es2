@@ -2,10 +2,11 @@
 <title>Main Page</title>
 <h1>Upload File</h1>
 <form method=post enctype=multipart/form-data>
-  <input type=file name=file><br><br>
-  <label for="fname">Título</label>
-  <input type="text" name="title"><br><br>
-  <label for="lname">Descrição</label>
-  <input type="text" name="desc"><br><br>
+  <input type=file name=file required><br><br>
+  Título <input type=text name=title><br><br>
+  Descrição <input type=text name=desc><br><br>
+  Senha <input type=password name=password><br><br>
   <input type="submit" value="Upload">
 </form>
+<br><br>
+<a href=uploads>Lista de uploads não protegidos por senha ordenados do mais recente ao mais antigo:</a>
