@@ -12,18 +12,25 @@ class TestDB:
 		title = 'título teste'
 		desc = 'desc teste'
 		data = b'teste bytes'
-		self.db._saveFileImpl(id, filename, title, desc, data)
+		password = 'teste password'
+		self.db._saveFileImpl(id, filename, title, desc, data, password)
 		dbItem = self.db.tryReadContents(id)
 		assert dbItem.title == title
 
 	def test_dbSorted(self):
-		self.db._saveFileImpl('i1', 'f1', 't1', 'd1', b'b1')
-		self.db._saveFileImpl('i2', 'f2', 't2', 'd2', b'b2')
+		self.db._saveFileImpl('i1', 'f1', 't1', 'd1', b'b1', '')
+		self.db._saveFileImpl('i2', 'f2', 't2', 'd2', b'b2', '')
 		items = self.db.getItemsSortedByDate(1, 2)
-		key, value = items[0]
+		key = items[0][0]
 		assert key == 'i1'
 
+	def test_ListDoesNotShowPasswordProtectedFiles(self):
+		self.db._saveFileImpl('i1', 'f1', 't1', 'd1', b'b1', 'p1')
+		self.db._saveFileImpl('i2', 'f2', 't2', 'd2', b'b2', 'p2')
+		items = self.db.getItemsSortedByDate(0, self.db.size())
+		assert not len(items)
+
 	def test_dbSize(self):
-		self.db._saveFileImpl('i1', 'f1', 't1', 'd1', b'b1')
-		self.db._saveFileImpl('i2', 'f2', 't2', 'd2', b'b2')
+		self.db._saveFileImpl('i1', 'f1', 't1', 'd1', b'b1', 'p1')
+		self.db._saveFileImpl('i2', 'f2', 't2', 'd2', b'b2', 'p2')
 		assert self.db.size() == 2
