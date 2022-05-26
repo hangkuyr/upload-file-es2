@@ -1,54 +1,33 @@
 ================================================
   NLOC    CCN   token  PARAM  length  location  
 ------------------------------------------------
-       2      1     14      2       2 setup_method@6-7@./Project/tests/test_db.py
-      10      1     58      1      10 test_dbSaveFile@9-18@./Project/tests/test_db.py
-       6      1     68      1       6 test_dbSorted@20-25@./Project/tests/test_db.py
-       5      1     67      1       5 test_ListDoesNotShowPasswordProtectedFiles@27-31@./Project/tests/test_db.py
-       4      1     53      1       4 test_dbSize@33-36@./Project/tests/test_db.py
-       5      1     18      0       8 GetUniqueFileId@6-13@./Project/src/pages/pHome.py
-      22      8    140      0      28 mainPage@16-43@./Project/src/pages/pHome.py
-       4      2     27      1       4 uploadsPath.hasCorrectCookie@15-18@./Project/src/pages/uploads.py
-       2      2     22      0       2 uploadsPath.canSendFile@34-35@./Project/src/pages/uploads.py
-      40     11    240      1      50 uploadsPath@8-57@./Project/src/pages/uploads.py
+       9      1     45      0       9 test_SaveFile@4-12@./Project/tests/test_SaveFile.py
        2      1     10      1       2 not_found@4-5@./Project/src/pages/pError404.py
-       4      1     26      4       4 __init__@5-8@./Project/src/pages/uploadsList.py
-       6      2     73      0       6 uploads@11-16@./Project/src/pages/uploadsList.py
-       2      1      9      1       2 GetCookieName@3-4@./Project/src/cookies.py
-       2      1     14      0       2 GetCurrentUTCTimestamp@3-4@./Project/src/timeUtils.py
-       2      1     12      1       2 TimestampToDatetime@6-7@./Project/src/timeUtils.py
-       2      1      8      1       2 DatetimeToStr@9-10@./Project/src/timeUtils.py
-       3      1     16      1       3 TimestampToStr@12-14@./Project/src/timeUtils.py
-       7      1     47      7       7 __init__@7-13@./Project/src/db.py
-       7      2     50      2       8 __init__@16-23@./Project/src/db.py
-       3      1     27      2       3 save@25-27@./Project/src/db.py
-       3      1     43      7       3 _saveFileImpl@29-31@./Project/src/db.py
-       2      1     43      6       2 saveFile@33-34@./Project/src/db.py
-       4      2     24      2       8 tryReadContents@36-43@./Project/src/db.py
-      10      5    120      3      20 getItemsSortedByDate@45-64@./Project/src/db.py
-       2      1     13      1       5 size@66-70@./Project/src/db.py
-       2      1     19      2       2 isPasswordProtected@75-76@./Project/src/db.py
-       2      1     16      2       2 getFilePassword@77-78@./Project/src/db.py
-12 file analyzed.
+       5      1     18      0       8 GetUniqueFileId@5-12@./Project/src/pages/pMain.py
+      16      4     96      0      21 mainPage@15-35@./Project/src/pages/pMain.py
+      13      3     85      1      13 serveFile@8-20@./Project/src/pages/uploads.py
+       7      2     27      0       7 InitDB@10-16@./Project/src/db.py
+       3      1     22      0       3 TerminateDB@18-20@./Project/src/db.py
+       2      1     33      4       2 SaveFile@22-23@./Project/src/db.py
+       7      1     47      5       7 SaveFileImpl@25-31@./Project/src/db.py
+       4      2     18      1       8 TryReadContents@33-40@./Project/src/db.py
+9 file analyzed.
 ==============================================================
 NLOC    Avg.NLOC  AvgCCN  Avg.token  function_cnt    file
 --------------------------------------------------------------
+     11       9.0     1.0       45.0         1     ./Project/tests/test_SaveFile.py
       7       0.0     0.0        0.0         0     ./Project/tests/includes.py
-     30       5.4     1.0       52.0         5     ./Project/tests/test_db.py
-     32      13.5     4.5       79.0         2     ./Project/src/pages/pHome.py
-     49      15.3     5.0       96.3         3     ./Project/src/pages/uploads.py
       4       2.0     1.0       10.0         1     ./Project/src/pages/pError404.py
-     14       5.0     1.5       49.5         2     ./Project/src/pages/uploadsList.py
-      2       2.0     1.0        9.0         1     ./Project/src/cookies.py
-     10       2.2     1.0       12.5         4     ./Project/src/timeUtils.py
+     25      10.5     2.5       57.0         2     ./Project/src/pages/pMain.py
+     17      13.0     3.0       85.0         1     ./Project/src/pages/uploads.py
       3       0.0     0.0        0.0         0     ./Project/src/constants.py
       2       0.0     0.0        0.0         0     ./Project/src/app.py
+     27       4.6     1.4       29.4         5     ./Project/src/db.py
      12       0.0     0.0        0.0         0     ./Project/src/main.py
-     55       4.2     1.6       40.2        10     ./Project/src/db.py
 
 ===============================================================================================================
 No thresholds exceeded (cyclomatic_complexity > 15 or length > 1000 or nloc > 1000000 or parameter_count > 100)
 ==========================================================================================
 Total nloc   Avg.NLOC  AvgCCN  Avg.token   Fun Cnt  Warning cnt   Fun Rt   nloc Rt
 ------------------------------------------------------------------------------------------
-       220       5.9     1.9       45.6       28            0      0.00    0.00
+       108       6.8     1.7       40.1       10            0      0.00    0.00

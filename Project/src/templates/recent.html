@@ -1,0 +1,35 @@
+{%include 'topBar.html'%}
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+<div style="margin:2em">
+<h1>
+  Uploads Recentes
+</h1>
+<table>    
+    <tr>
+        <th>Arquivo</th>
+        <th>Horário do Upload — UTC</th>
+    </tr>
+    {% for v in items %}
+    <tr>
+        <td><a href=uploads/{{v.link}}>{% if v.title|length %}{{v.title}}{% else %}Nameless{% endif %}</a></td>
+        <td>{{v.timestamp}}</td>
+    </tr>
+    {% endfor %}
+</table>
+</div>
