@@ -13,9 +13,9 @@
        4      1     26      4       4 __init__@5-8@./Project/src/pages/recent.py
        6      2     73      0       6 recentCallback@11-16@./Project/src/pages/recent.py
        4      2     27      1       4 uploadsPath.hasCorrectCookie@17-20@./Project/src/pages/uploads.py
-      14      3     91      0      21 uploadsPath.getPageTemplate@22-42@./Project/src/pages/uploads.py
-       2      2     22      0       2 uploadsPath.canSendFile@56-57@./Project/src/pages/uploads.py
-      38     11    218      1      70 uploadsPath@10-79@./Project/src/pages/uploads.py
+      13      3     83      0      20 uploadsPath.getPageTemplate@22-41@./Project/src/pages/uploads.py
+       2      2     22      0       2 uploadsPath.canSendFile@55-56@./Project/src/pages/uploads.py
+      38     11    218      1      69 uploadsPath@10-78@./Project/src/pages/uploads.py
        2      1     10      1       2 not_found@4-5@./Project/src/pages/pError404.py
        2      1      9      1       2 GetCookieName@3-4@./Project/src/cookies.py
        2      1     14      0       2 GetCurrentUTCTimestamp@3-4@./Project/src/timeUtils.py
@@ -42,7 +42,7 @@ NLOC    Avg.NLOC  AvgCCN  Avg.token  function_cnt    file
      32      13.5     4.5       79.0         2     ./Project/src/pages/pHome.py
       4       2.0     1.0        9.0         1     ./Project/src/pages/search.py
      14       5.0     1.5       49.5         2     ./Project/src/pages/recent.py
-     62      14.5     4.5       89.5         4     ./Project/src/pages/uploads.py
+     61      14.2     4.5       87.5         4     ./Project/src/pages/uploads.py
       4       2.0     1.0       10.0         1     ./Project/src/pages/pError404.py
       2       2.0     1.0        9.0         1     ./Project/src/cookies.py
      10       2.2     1.0       12.5         4     ./Project/src/timeUtils.py
@@ -56,4 +56,4 @@ No thresholds exceeded (cyclomatic_complexity > 15 or length > 1000 or nloc > 10
 ==========================================================================================
 Total nloc   Avg.NLOC  AvgCCN  Avg.token   Fun Cnt  Warning cnt   Fun Rt   nloc Rt
 ------------------------------------------------------------------------------------------
-       241       5.8     1.9       44.0       31            0      0.00    0.00
+       240       5.8     1.9       43.7       31            0      0.00    0.00
