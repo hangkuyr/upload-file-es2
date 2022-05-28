@@ -33,7 +33,6 @@ def uploadsPath(id):
             }
 
             if kind is not None:
-                print (kind.extension, 'ext')
                 if kind.extension in ['png', 'jpg']:
                     image = b64encode(dbItem.data).decode("utf-8")
                     d['img'] = image
