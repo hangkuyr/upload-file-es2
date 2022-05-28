@@ -7,10 +7,10 @@ class RecentItem:
         self.title = title
         self.timestamp = timestamp
 
-@app.route('/uploads', methods=['GET'])
-def uploads():
+@app.route('/recent', methods=['GET'])
+def recentCallback():
     items = []
     print('db',db.size(), len( db.getItemsSortedByDate(0, 10)))
     for id, dbItem in db.getItemsSortedByDate(0, 10):
         items.append(RecentItem(id, dbItem.title, TimestampToStr(dbItem.timestamp)))
-    return render_template('uploadsList.html', items=items)
+    return render_template('recent.html', items=items)
