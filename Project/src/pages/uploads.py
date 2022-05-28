@@ -19,23 +19,37 @@ def uploadsPath(id):
             c = request.cookies
             return cookieName in c and c[cookieName] == password
 
+        def getPageTemplate():
+            '''
+            Aqui, dependendo do tipo do arquivo (.png, .mp3, .wav, .txt) podemos renderizar um template diferente
+            '''
+            FILE_TEMPLATE = 'file.html'
+
+            kind = filetype.guess(dbItem.data)
+
+            d = {
+                'title': dbItem.title,
+                'desc': dbItem.desc
+            }
+
+            if kind is not None:
+                print (kind.extension, 'ext')
+                if kind.extension in ['png', 'jpg']:
+                    image = b64encode(dbItem.data).decode("utf-8")
+                    d['img'] = image
+                    d['specificTemplate'] = 'imageTemplate'
+
+            return render_template(FILE_TEMPLATE, **d)
+
         if request.method == 'GET':
             if db.isPasswordProtected(id):
                 password = db.getFilePassword(id)
                 if hasCorrectCookie(password):
-                    return render_template('privateFile.html', dbItem=dbItem)
+                    return getPageTemplate()
                 else:
                     return render_template('passwordProtected.html')
             else:
-                '''
-                Aqui, dependendo do tipo do arquivo (.png, .mp3, .wav, .txt) podemos renderizar um template diferente
-                '''
-                kind = filetype.guess(dbItem.data)
-                if kind is None :
-                    return render_template('publicFile.html', title=dbItem.title, desc=dbItem.desc)
-                if kind.extension == 'png' or kind.extension == 'jpg'  :
-                    image = b64encode(dbItem.data).decode("utf-8")
-                    return render_template('publicFileImage.html', title=dbItem.title, desc=dbItem.desc, img=image)
+                return getPageTemplate()
                     
         else:
 
@@ -59,7 +73,7 @@ def uploadsPath(id):
                     else:
                         return render_template('invalidPassword.html')
                 if hasCorrectCookie(db.getFilePassword(id)):
-                    return render_template('privateFile.html', dbItem=dbItem)
+                    return getPageTemplate()
                 return render_template('invalidRequest.html')
             else:
                 return render_template('invalidMethod.html')

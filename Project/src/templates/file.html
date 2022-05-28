@@ -3,6 +3,11 @@
 <div style="margin:2em">
     <h1>{{title}}</h1>
     <p>{{desc}}</p>
+    {% block content %}
+        {% if specificTemplate=='imageTemplate' %}
+            {% include 'fileImage.html' %}
+        {% endif %}
+    {% endblock content %}
     <form method=post>
         <input type=submit name=download value='Download File'>
     </form>
