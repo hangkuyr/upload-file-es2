@@ -66,7 +66,7 @@ def uploadsPath(id):
                 if PASSWORD_NAME_IN_HTML in d:
                     password = db.getFilePassword(id)
                     if d[PASSWORD_NAME_IN_HTML] == password:
-                        resp = make_response(render_template('privateFile.html', dbItem=dbItem))
+                        resp = make_response(getPageTemplate())
                         resp.set_cookie(GetCookieName(id), password)
                         return resp
                     else:
