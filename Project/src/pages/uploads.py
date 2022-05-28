@@ -1,6 +1,8 @@
 from app import*
 from db import*
 import io
+import filetype
+from base64 import b64encode
 from cookies import*
 
 # https://gist.github.com/Miserlou/fcf0e9410364d98a853cb7ff42efd35a
@@ -28,7 +30,13 @@ def uploadsPath(id):
                 '''
                 Aqui, dependendo do tipo do arquivo (.png, .mp3, .wav, .txt) podemos renderizar um template diferente
                 '''
-                return render_template('publicFile.html', title=dbItem.title, desc=dbItem.desc)
+                kind = filetype.guess(dbItem.data)
+                if kind is None :
+                    return render_template('publicFile.html', title=dbItem.title, desc=dbItem.desc)
+                if kind.extension == 'png' or kind.extension == 'jpg'  :
+                    image = b64encode(dbItem.data).decode("utf-8")
+                    return render_template('publicFileImage.html', title=dbItem.title, desc=dbItem.desc, img=image)
+                    
         else:
 
             def canSendFile():
