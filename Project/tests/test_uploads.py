@@ -1,9 +1,5 @@
 from includes import*
 from app import*
-from flask import session
-
-PNG_PATH = 'icon.png'
-MP3_PATH = 'teste.mp3'
 
 class TestUploads:
 

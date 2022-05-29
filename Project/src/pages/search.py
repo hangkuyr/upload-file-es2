@@ -9,8 +9,9 @@ def search():
 
 	else:
 		d = request.form
-		title = d['title']
-		dbItems = db.findPublicDBItemsByTitle(title)
-		if len(dbItems):
-			return render_template('searchList.html', items=GetItems(dbItems))
+		if 'title' in d: # proteger de usuários desonestos
+			title = d['title']
+			dbItems = db.findPublicDBItemsByTitle(title)
+			if len(dbItems):
+				return render_template('searchList.html', items=GetItems(dbItems))
 		return render_template('noResult.html')
