@@ -3,7 +3,7 @@ from db import*
 
 class TestDB:
 
-	def setup_method(self, test_method):
+	def setup_method(self):
 		self.db = DB()
 
 	def test_dbSaveFile(self):
