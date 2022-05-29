@@ -37,6 +37,11 @@ def uploadsPath(id):
                     image = b64encode(dbItem.data).decode("utf-8")
                     d['img'] = image
                     d['specificTemplate'] = 'imageTemplate'
+                if kind.extension in ['mp3']:
+                    audio = b64encode(dbItem.data).decode("utf-8")
+                    d['img'] = audio
+                    d['specificTemplate'] = 'audioTemplate'
+
 
             return render_template(FILE_TEMPLATE, **d)
 

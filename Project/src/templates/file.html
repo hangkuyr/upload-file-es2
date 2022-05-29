@@ -7,6 +7,9 @@
         {% if specificTemplate=='imageTemplate' %}
             {% include 'fileImage.html' %}
         {% endif %}
+        {% if specificTemplate=='audioTemplate' %}
+            {% include 'fileAudio.html' %}
+        {% endif %}
     {% endblock content %}
     <form method=post>
         <input type=submit name=download value='Download File'>
