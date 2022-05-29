@@ -26,13 +26,14 @@
        2      1      9      0       2 aboutCallback@4-5@./Project/src/pages/about.py
        5      1     18      0       8 GetUniqueFileId@8-15@./Project/src/pages/pHome.py
       24      8    162      0      31 mainPage@18-48@./Project/src/pages/pHome.py
-       2      1      9      0       2 search@4-5@./Project/src/pages/search.py
+      12      3     62      0      14 search@5-18@./Project/src/pages/search.py
        4      1     26      4       4 __init__@5-8@./Project/src/pages/recent.py
        6      2     73      0       6 recentCallback@11-16@./Project/src/pages/recent.py
        4      2     27      1       4 uploadsPath.hasCorrectCookie@17-20@./Project/src/pages/uploads.py
-      17      4    117      0      25 uploadsPath.getPageTemplate@22-46@./Project/src/pages/uploads.py
-       2      2     22      0       2 uploadsPath.canSendFile@60-61@./Project/src/pages/uploads.py
-      38     11    213      1      74 uploadsPath@10-83@./Project/src/pages/uploads.py
+      17      4    117      0      24 uploadsPath.getPageTemplate@22-45@./Project/src/pages/uploads.py
+       2      2     22      0       2 uploadsPath.canSendFile@59-60@./Project/src/pages/uploads.py
+      38     11    213      1      73 uploadsPath@10-82@./Project/src/pages/uploads.py
+      22      5    142      1      27 searchResult@9-35@./Project/src/pages/searchResult.py
        2      1     10      1       2 not_found@4-5@./Project/src/pages/pError404.py
        2      1      9      1       2 GetCookieName@3-4@./Project/src/cookies.py
        2      1     14      0       2 GetCurrentUTCTimestamp@3-4@./Project/src/timeUtils.py
@@ -45,12 +46,13 @@
        3      1     27      2       3 save@25-27@./Project/src/db.py
        3      1     43      7       3 _saveFileImpl@29-31@./Project/src/db.py
        2      1     43      6       2 saveFile@33-34@./Project/src/db.py
-       4      2     24      2       8 tryReadContents@36-43@./Project/src/db.py
-      10      5    120      3      20 getItemsSortedByDate@45-64@./Project/src/db.py
-       2      1     13      1       5 size@66-70@./Project/src/db.py
-       2      1     19      2       2 isPasswordProtected@75-76@./Project/src/db.py
-       2      1     16      2       2 getFilePassword@77-78@./Project/src/db.py
-17 file analyzed.
+       5      3     30      2       5 findFileByTitle@36-40@./Project/src/db.py
+       4      2     24      2       8 tryReadContents@42-49@./Project/src/db.py
+      10      5    120      3      20 getItemsSortedByDate@51-70@./Project/src/db.py
+       2      1     13      1       5 size@72-76@./Project/src/db.py
+       2      1     19      2       2 isPasswordProtected@81-82@./Project/src/db.py
+       2      1     16      2       2 getFilePassword@83-84@./Project/src/db.py
+18 file analyzed.
 ==============================================================
 NLOC    Avg.NLOC  AvgCCN  Avg.token  function_cnt    file
 --------------------------------------------------------------
@@ -61,20 +63,21 @@ NLOC    Avg.NLOC  AvgCCN  Avg.token  function_cnt    file
      19       2.1     1.0       19.4         7     ./Project/tests/test_app.py
       4       2.0     1.0        9.0         1     ./Project/src/pages/about.py
      35      14.5     4.5       90.0         2     ./Project/src/pages/pHome.py
-      4       2.0     1.0        9.0         1     ./Project/src/pages/search.py
+     15      12.0     3.0       62.0         1     ./Project/src/pages/search.py
      14       5.0     1.5       49.5         2     ./Project/src/pages/recent.py
      65      15.2     4.8       94.8         4     ./Project/src/pages/uploads.py
+     28      22.0     5.0      142.0         1     ./Project/src/pages/searchResult.py
       4       2.0     1.0       10.0         1     ./Project/src/pages/pError404.py
       2       2.0     1.0        9.0         1     ./Project/src/cookies.py
      10       2.2     1.0       12.5         4     ./Project/src/timeUtils.py
       4       0.0     0.0        0.0         0     ./Project/src/constants.py
      13       4.0     1.0       18.0         1     ./Project/src/app.py
       5       0.0     0.0        0.0         0     ./Project/src/main.py
-     55       4.2     1.6       40.2        10     ./Project/src/db.py
+     60       4.3     1.7       39.3        11     ./Project/src/db.py
 
 ===============================================================================================================
 No thresholds exceeded (cyclomatic_complexity > 15 or length > 1000 or nloc > 1000000 or parameter_count > 100)
 ==========================================================================================
 Total nloc   Avg.NLOC  AvgCCN  Avg.token   Fun Cnt  Warning cnt   Fun Rt   nloc Rt
 ------------------------------------------------------------------------------------------
-       314       4.9     1.6       38.4       49            0      0.00    0.00
+       358       5.5     1.7       41.3       51            0      0.00    0.00
