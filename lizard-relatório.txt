@@ -6,9 +6,21 @@
        6      1     68      1       6 test_dbSorted@20-25@./Project/tests/test_db.py
        5      1     67      1       5 test_ListDoesNotShowPasswordProtectedFiles@27-31@./Project/tests/test_db.py
        4      1     53      1       4 test_dbSize@33-36@./Project/tests/test_db.py
-       3      1     23      1       3 setup_method@6-8@./Project/tests/test_uploads.py
-       4      1     30      1       4 test_TitleIndex@10-13@./Project/tests/test_uploads.py
-       3      1     20      0       3 test_CanCreateApp@5-7@./Project/tests/test_app.py
+       3      1     23      1       3 setup_method@6-8@./Project/tests/test_pages.py
+       3      1     22      1       3 test_TitleIndex@10-12@./Project/tests/test_pages.py
+       5      1     43      1       5 setup_method@6-10@./Project/tests/test_uploads.py
+       7      1     41      2       7 getPostDictionary@12-18@./Project/tests/test_uploads.py
+       3      1     27      1       3 test_UploadPublicFileRedirectsToFilePage@20-22@./Project/tests/test_uploads.py
+       3      1     32      1       3 test_UploadPublicFileRendersCorrectTitle@24-26@./Project/tests/test_uploads.py
+       3      1     32      1       3 test_UploadImageRendersImage@28-30@./Project/tests/test_uploads.py
+       3      1     32      1       3 test_UploadFileShowsDownloadForm@32-34@./Project/tests/test_uploads.py
+       3      1     32      1       3 test_UploadMP3RendersBase64Audio@36-38@./Project/tests/test_uploads.py
+       4      1     40      1       4 test_UploadPublicFileShowsOnRecent@40-43@./Project/tests/test_uploads.py
+       3      1     23      1       3 setup_method@6-8@./Project/tests/test_app.py
+       2      1     18      1       2 test_AppIsInstantiated@10-11@./Project/tests/test_app.py
+       2      1     19      1       2 test_IconIsPresent@13-14@./Project/tests/test_app.py
+       2      1     19      1       2 test_IconIsPresent@16-17@./Project/tests/test_app.py
+       2      1     19      1       2 test_CheckTopBarShowsRecentsTab@19-20@./Project/tests/test_app.py
        2      1      9      0       2 aboutCallback@4-5@./Project/src/pages/about.py
        5      1     18      0       8 GetUniqueFileId@8-15@./Project/src/pages/pHome.py
       24      8    162      0      31 mainPage@18-48@./Project/src/pages/pHome.py
@@ -36,14 +48,15 @@
        2      1     13      1       5 size@66-70@./Project/src/db.py
        2      1     19      2       2 isPasswordProtected@75-76@./Project/src/db.py
        2      1     16      2       2 getFilePassword@77-78@./Project/src/db.py
-16 file analyzed.
+17 file analyzed.
 ==============================================================
 NLOC    Avg.NLOC  AvgCCN  Avg.token  function_cnt    file
 --------------------------------------------------------------
       7       0.0     0.0        0.0         0     ./Project/tests/includes.py
      30       5.4     1.0       51.6         5     ./Project/tests/test_db.py
-     10       3.5     1.0       26.5         2     ./Project/tests/test_uploads.py
-      6       3.0     1.0       20.0         1     ./Project/tests/test_app.py
+      9       3.0     1.0       22.5         2     ./Project/tests/test_pages.py
+     34       3.9     1.0       34.9         8     ./Project/tests/test_uploads.py
+     15       2.2     1.0       19.6         5     ./Project/tests/test_app.py
       4       2.0     1.0        9.0         1     ./Project/src/pages/about.py
      35      14.5     4.5       90.0         2     ./Project/src/pages/pHome.py
       4       2.0     1.0        9.0         1     ./Project/src/pages/search.py
@@ -62,4 +75,4 @@ No thresholds exceeded (cyclomatic_complexity > 15 or length > 1000 or nloc > 10
 ==========================================================================================
 Total nloc   Avg.NLOC  AvgCCN  Avg.token   Fun Cnt  Warning cnt   Fun Rt   nloc Rt
 ------------------------------------------------------------------------------------------
-       268       5.7     1.8       42.7       35            0      0.00    0.00
+       310       5.1     1.6       39.3       47            0      0.00    0.00
