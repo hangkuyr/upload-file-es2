@@ -61,7 +61,7 @@ def uploadsPath(id):
 
             if 'download' in request.form:
                 if canSendFile():
-                    return send_file(io.BytesIO(dbItem.data), attachment_filename=dbItem.filename, as_attachment=True)
+                    return send_file(io.BytesIO(dbItem.data), download_name=dbItem.filename, as_attachment=True)
                 return render_template('invalidRequest.html')
 
             if db.isPasswordProtected(id):
