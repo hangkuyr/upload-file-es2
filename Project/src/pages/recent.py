@@ -7,9 +7,13 @@ class RecentItem:
         self.title = title
         self.timestamp = timestamp
 
+def GetItems(dbItems):
+    items = []
+    for id, dbItem in dbItems:
+        items.append(RecentItem(id, dbItem.title, TimestampToStr(dbItem.timestamp)))
+    return items
+
 @app.route('/recent', methods=['GET'])
 def recentCallback():
-    items = []
-    for id, dbItem in db.getItemsSortedByDate(0, 10):
-        items.append(RecentItem(id, dbItem.title, TimestampToStr(dbItem.timestamp)))
-    return render_template('recent.html', items=items)
+    dbItems = db.getItemsSortedByDate(0, 10)
+    return render_template('recent.html', items=GetItems(dbItems))

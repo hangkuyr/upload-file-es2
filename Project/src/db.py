@@ -33,11 +33,13 @@ class DB:
     def saveFile(self, id, file, title='', desc='', password=''):
         self._saveFileImpl(id, file.filename, title, desc, file.read(), password)
 
-    def findFileByTitle(self, title):
+    def findPublicDBItemsByTitle(self, title):
+        files = []
         for id in self.db:
-            if title in self.db[id].title:
-                return id
-            return None
+            dbItem = self.db[id]
+            if title in dbItem.title and dbItem.password == '':
+                files.append([id, dbItem])
+        return files
 
     def tryReadContents(self, id):
         '''
