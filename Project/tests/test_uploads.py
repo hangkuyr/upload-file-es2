@@ -2,13 +2,16 @@ from includes import*
 from app import*
 from flask import session
 
+PNG_PATH = 'icon.png'
+MP3_PATH = 'teste.mp3'
+
 class TestUploads:
 
     def setup_method(self):
         self.app = CreateApp()
         self.client = self.app.test_client()
-        self.d = self.getPostDictionary('icon.png')
-        self.dMP3 = self.getPostDictionary('teste.mp3')
+        self.d = self.getPostDictionary(PNG_PATH)
+        self.dMP3 = self.getPostDictionary(MP3_PATH)
         self.TEST_PASSWORD = 'secret password'
 
     def getPostDictionaryWithPassword(self, fileName, password):
@@ -95,22 +98,20 @@ class TestUploads:
         assert response.data == BYTES
 
     def test_Upload2PublicFiles(self):
-        d1 = {
-            'file': (Path(__file__).parent / 'files' / 'icon.png').open('rb'),
-            'title': 'teste title 1',
-            'desc': 'teste desc 1',
-            'password': ''
-        }
-        d2 = {
-            'file': (Path(__file__).parent / 'files' / 'teste.mp3').open('rb'),
-            'title': 'teste title 2',
-            'desc': 'teste desc 2',
+        
+        def getDictionary(path, title, desc):
+            return {
+            'file': (Path(__file__).parent / 'files' / path).open('rb'),
+            'title': title,
+            'desc': desc,
             'password': ''
         }
 
-        self.client.post('/', data=d1)
-        self.client.post('/', data=d2)
+        TITLES = ['teste title 1', 'teste title 2']
+
+        self.client.post('/', data=getDictionary(PNG_PATH, TITLES[0], 'teste desc 1'))
+        self.client.post('/', data=getDictionary(MP3_PATH, TITLES[1], 'teste desc 2'))
 
         response = self.client.get('/recent')
         data = response.data
-        assert b'teste title 1</a></td>' in data and b'teste title 2</a></td>' in data
+        assert all(bytes(title.encode()) + b'</a></td>' in data for title in TITLES)
