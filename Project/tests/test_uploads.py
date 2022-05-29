@@ -108,8 +108,6 @@ class TestUploads:
             'password': ''
         }
 
-        print('wtf')
-
         self.client.post('/', data=d1)
         self.client.post('/', data=d2)
 
