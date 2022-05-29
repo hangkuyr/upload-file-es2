@@ -19,7 +19,7 @@ class TestSearch:
         return self.getDict(MP3_PATH, T1_PUB, 'desc1')
 
     def getItem2Pub(self):
-        return self.getDict(MP3_PATH, T2_PUB, 'desc1')
+        return self.getDict(MP3_PATH, T2_PUB, 'desc2')
 
     def getItem1Priv(self):
         return self.getDict(MP3_PATH, T_PRIV, 'desc1', 'pass1')
@@ -38,7 +38,15 @@ class TestSearch:
         assert T1_PUB in response.data
 
     def test_search2Itens(self):
-        pass
+
+        self.client.post('/', data=self.getItem1Pub())
+        self.client.post('/', data=self.getItem2Pub())
+
+        searchPostData = {
+            'title': 'titl'
+        }
+        response = self.client.post('/search', data=searchPostData)
+        assert all(i in response.data for i in [T1_PUB, T2_PUB])
 
     def test_searchDoesNotReturnPrivateItem(self):
         pass
