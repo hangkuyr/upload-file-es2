@@ -8,21 +8,22 @@
        4      1     53      1       4 test_dbSize@33-36@./Project/tests/test_db.py
        3      1     23      1       3 setup_method@6-8@./Project/tests/test_pages.py
        3      1     22      1       3 test_TitleIndex@10-12@./Project/tests/test_pages.py
-       6      1     48      1       6 setup_method@7-12@./Project/tests/test_uploads.py
-       7      1     43      3       7 getPostDictionaryWithPassword@14-20@./Project/tests/test_uploads.py
-       7      1     33      2       7 getPostDictionaryWithSpecificPath@22-28@./Project/tests/test_uploads.py
-       2      1     23      2       2 getPostDictionary@30-31@./Project/tests/test_uploads.py
-       3      1     27      1       3 test_UploadPublicFileRedirectsToFilePage@33-35@./Project/tests/test_uploads.py
-       3      1     32      1       3 test_UploadPublicFileRendersCorrectTitle@37-39@./Project/tests/test_uploads.py
-       3      1     32      1       3 test_UploadImageRendersImage@41-43@./Project/tests/test_uploads.py
-       3      1     32      1       3 test_UploadFileShowsDownloadForm@45-47@./Project/tests/test_uploads.py
-       3      1     32      1       3 test_UploadMP3RendersBase64Audio@49-51@./Project/tests/test_uploads.py
-       4      1     40      1       4 test_UploadPublicFileShowsOnRecent@53-56@./Project/tests/test_uploads.py
-       6      1     61      1      12 test_PasswordProtectedUploadRequiresPasswordToAnotherClient@58-69@./Project/tests/test_uploads.py
-       6      2     52      1       6 test_PasswordProtectedUploadSetCookieWithPassword@71-76@./Project/tests/test_uploads.py
-       5      1     43      1       5 test_HasDownloadButton@78-82@./Project/tests/test_uploads.py
-      10      1     82      1      12 test_CanDownloadPublicFile@84-95@./Project/tests/test_uploads.py
-      18      2    124      1      20 test_Upload2PublicFiles@97-116@./Project/tests/test_uploads.py
+       6      1     48      1       6 setup_method@10-15@./Project/tests/test_uploads.py
+       7      1     43      3       7 getPostDictionaryWithPassword@17-23@./Project/tests/test_uploads.py
+       7      1     33      2       7 getPostDictionaryWithSpecificPath@25-31@./Project/tests/test_uploads.py
+       2      1     23      2       2 getPostDictionary@33-34@./Project/tests/test_uploads.py
+       3      1     27      1       3 test_UploadPublicFileRedirectsToFilePage@36-38@./Project/tests/test_uploads.py
+       3      1     32      1       3 test_UploadPublicFileRendersCorrectTitle@40-42@./Project/tests/test_uploads.py
+       3      1     32      1       3 test_UploadImageRendersImage@44-46@./Project/tests/test_uploads.py
+       3      1     32      1       3 test_UploadFileShowsDownloadForm@48-50@./Project/tests/test_uploads.py
+       3      1     32      1       3 test_UploadMP3RendersBase64Audio@52-54@./Project/tests/test_uploads.py
+       4      1     40      1       4 test_UploadPublicFileShowsOnRecent@56-59@./Project/tests/test_uploads.py
+       6      1     61      1      12 test_PasswordProtectedUploadRequiresPasswordToAnotherClient@61-72@./Project/tests/test_uploads.py
+       6      2     52      1       6 test_PasswordProtectedUploadSetCookieWithPassword@74-79@./Project/tests/test_uploads.py
+       5      1     43      1       5 test_HasDownloadButton@81-85@./Project/tests/test_uploads.py
+      10      1     82      1      12 test_CanDownloadPublicFile@87-98@./Project/tests/test_uploads.py
+       6      1     42      3       6 test_Upload2PublicFiles.getDictionary@102-107@./Project/tests/test_uploads.py
+       9      2     95      1      18 test_Upload2PublicFiles@100-117@./Project/tests/test_uploads.py
        3      1     23      1       3 setup_method@6-8@./Project/tests/test_app.py
        2      1     18      1       2 test_AppIsInstantiated@10-11@./Project/tests/test_app.py
        2      1     19      1       2 test_IconIsPresent@13-14@./Project/tests/test_app.py
@@ -35,7 +36,7 @@
       24      8    162      0      31 mainPage@18-48@./Project/src/pages/pHome.py
       12      3     62      0      14 search@5-18@./Project/src/pages/search.py
        4      1     26      4       4 __init__@5-8@./Project/src/pages/recent.py
-       6      2     73      0       6 recentCallback@11-16@./Project/src/pages/recent.py
+       5      2     51      0       5 recentCallback@11-15@./Project/src/pages/recent.py
        4      2     27      1       4 uploadsPath.hasCorrectCookie@17-20@./Project/src/pages/uploads.py
       17      4    117      0      24 uploadsPath.getPageTemplate@22-45@./Project/src/pages/uploads.py
        2      2     22      0       2 uploadsPath.canSendFile@59-60@./Project/src/pages/uploads.py
@@ -66,12 +67,12 @@ NLOC    Avg.NLOC  AvgCCN  Avg.token  function_cnt    file
       7       0.0     0.0        0.0         0     ./Project/tests/includes.py
      30       5.4     1.0       51.6         5     ./Project/tests/test_db.py
       9       3.0     1.0       22.5         2     ./Project/tests/test_pages.py
-     90       5.7     1.1       46.9        15     ./Project/tests/test_uploads.py
+     88       5.2     1.1       44.8        16     ./Project/tests/test_uploads.py
      19       2.1     1.0       19.4         7     ./Project/tests/test_app.py
       4       2.0     1.0        9.0         1     ./Project/src/pages/about.py
      35      14.5     4.5       90.0         2     ./Project/src/pages/pHome.py
      15      12.0     3.0       62.0         1     ./Project/src/pages/search.py
-     14       5.0     1.5       49.5         2     ./Project/src/pages/recent.py
+     13       4.5     1.5       38.5         2     ./Project/src/pages/recent.py
      65      15.2     4.8       94.8         4     ./Project/src/pages/uploads.py
       8       2.0     1.0       10.0         1     ./Project/src/pages/searchResult.py
       4       2.0     1.0       10.0         1     ./Project/src/pages/pError404.py
@@ -87,4 +88,4 @@ No thresholds exceeded (cyclomatic_complexity > 15 or length > 1000 or nloc > 10
 ==========================================================================================
 Total nloc   Avg.NLOC  AvgCCN  Avg.token   Fun Cnt  Warning cnt   Fun Rt   nloc Rt
 ------------------------------------------------------------------------------------------
-       396       5.4     1.6       41.4       58            0      0.00    0.00
+       393       5.3     1.6       40.5       59            0      0.00    0.00
