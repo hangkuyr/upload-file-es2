@@ -93,3 +93,26 @@ class TestUploads:
         response = self.client.post(url, data={'download':''})
         os.remove(TEST_FILE_NAME)
         assert response.data == BYTES
+
+    def test_Upload2PublicFiles(self):
+        d1 = {
+            'file': (Path(__file__).parent / 'files' / 'icon.png').open('rb'),
+            'title': 'teste title 1',
+            'desc': 'teste desc 1',
+            'password': ''
+        }
+        d2 = {
+            'file': (Path(__file__).parent / 'files' / 'teste.mp3').open('rb'),
+            'title': 'teste title 2',
+            'desc': 'teste desc 2',
+            'password': ''
+        }
+
+        print('wtf')
+
+        self.client.post('/', data=d1)
+        self.client.post('/', data=d2)
+
+        response = self.client.get('/recent')
+        data = response.data
+        assert b'teste title 1</a></td>' in data and b'teste title 2</a></td>' in data
