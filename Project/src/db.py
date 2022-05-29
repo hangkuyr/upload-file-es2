@@ -16,7 +16,7 @@ class DB:
     def __init__(self, path=None):
         if path is not None:
             with open(path) as f:
-                self.db = json.load(path)
+                self.db = json.load(f)
         else:
             self.db = {}
 

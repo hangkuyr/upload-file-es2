@@ -1,3 +1,4 @@
+from operator import getitem
 from includes import*
 from app import*
 
@@ -49,7 +50,23 @@ class TestSearch:
         assert all(i in response.data for i in [T1_PUB, T2_PUB])
 
     def test_searchDoesNotReturnPrivateItem(self):
-        pass
 
-    def test_pubPrivPubReturns2Pubs(self):
-        pass
+        self.client.post('/', data=self.getItem1Priv())
+        searchPostData = {
+            'title': T_PRIV
+        }
+        response = self.client.post('/search', data=searchPostData)
+        assert T_PRIV not in response.data
+
+    def test_PubPrivPubReturns2Pubs(self):
+        # 3 uploads (intercalados pub priv pub)
+        self.client.post('/', data=self.getItem1Pub())
+        self.client.post('/', data=self.getItem1Priv())
+        self.client.post('/', data=self.getItem2Pub())
+
+        searchPostData = {
+            'title': 'titl'
+        }
+        response = self.client.post('/search', data=searchPostData)
+        data = response.data
+        assert all(i in data for i in [T1_PUB, T2_PUB]) and T_PRIV not in data
