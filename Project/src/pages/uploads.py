@@ -64,6 +64,13 @@ def uploadsPath(id):
                     return send_file(io.BytesIO(dbItem.data), download_name=dbItem.filename, as_attachment=True)
                 return render_template('invalidRequest.html')
 
+            if 'delete' in request.form:
+                if db.isPasswordProtected(id):
+                    db.deletePrivateDBItem(id)
+                    return render_template('index.html')
+                else:
+                    return render_template('cantDelete.html')
+
             if db.isPasswordProtected(id):
                 PASSWORD_NAME_IN_HTML = 'password'
                 d = request.form

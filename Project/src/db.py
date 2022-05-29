@@ -33,6 +33,9 @@ class DB:
     def saveFile(self, id, file, title='', desc='', password=''):
         self._saveFileImpl(id, file.filename, title, desc, file.read(), password)
 
+    def deletePrivateDBItem(self, id):
+        del self.db[id]
+
     def findPublicDBItemsByTitle(self, title):
         files = []
         for id in self.db:
