@@ -33,6 +33,12 @@ class DB:
     def saveFile(self, id, file, title='', desc='', password=''):
         self._saveFileImpl(id, file.filename, title, desc, file.read(), password)
 
+    def findFileByTitle(self, title):
+        for id in self.db:
+            if title in self.db[id].title:
+                return id
+            return None
+
     def tryReadContents(self, id):
         '''
         returns None if id is not in the database
