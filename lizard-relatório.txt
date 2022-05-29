@@ -33,7 +33,7 @@
       17      4    117      0      24 uploadsPath.getPageTemplate@22-45@./Project/src/pages/uploads.py
        2      2     22      0       2 uploadsPath.canSendFile@59-60@./Project/src/pages/uploads.py
       38     11    213      1      73 uploadsPath@10-82@./Project/src/pages/uploads.py
-      22      5    142      1      27 searchResult@9-35@./Project/src/pages/searchResult.py
+       2      1     10      1       2 searchResult@10-11@./Project/src/pages/searchResult.py
        2      1     10      1       2 not_found@4-5@./Project/src/pages/pError404.py
        2      1      9      1       2 GetCookieName@3-4@./Project/src/cookies.py
        2      1     14      0       2 GetCurrentUTCTimestamp@3-4@./Project/src/timeUtils.py
@@ -66,7 +66,7 @@ NLOC    Avg.NLOC  AvgCCN  Avg.token  function_cnt    file
      15      12.0     3.0       62.0         1     ./Project/src/pages/search.py
      14       5.0     1.5       49.5         2     ./Project/src/pages/recent.py
      65      15.2     4.8       94.8         4     ./Project/src/pages/uploads.py
-     28      22.0     5.0      142.0         1     ./Project/src/pages/searchResult.py
+      9       2.0     1.0       10.0         1     ./Project/src/pages/searchResult.py
       4       2.0     1.0       10.0         1     ./Project/src/pages/pError404.py
       2       2.0     1.0        9.0         1     ./Project/src/cookies.py
      10       2.2     1.0       12.5         4     ./Project/src/timeUtils.py
@@ -80,4 +80,4 @@ No thresholds exceeded (cyclomatic_complexity > 15 or length > 1000 or nloc > 10
 ==========================================================================================
 Total nloc   Avg.NLOC  AvgCCN  Avg.token   Fun Cnt  Warning cnt   Fun Rt   nloc Rt
 ------------------------------------------------------------------------------------------
-       358       5.5     1.7       41.3       51            0      0.00    0.00
+       339       5.1     1.6       38.7       51            0      0.00    0.00
