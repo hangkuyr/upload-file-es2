@@ -67,7 +67,7 @@ def uploadsPath(id):
             if 'delete' in request.form:
                 if db.isPasswordProtected(id):
                     db.deletePrivateDBItem(id)
-                    return render_template('index.html')
+                    return make_response(redirect('/'))
                 else:
                     return render_template('cantDelete.html')
 
