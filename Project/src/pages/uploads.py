@@ -41,6 +41,7 @@ def uploadsPath(id):
                     audio = b64encode(dbItem.data).decode("utf-8")
                     d['img'] = audio
                     d['specificTemplate'] = 'audioTemplate'
+                d['hasPassword'] = dbItem.password != ''
                     
             return render_template(FILE_TEMPLATE, **d)
 
