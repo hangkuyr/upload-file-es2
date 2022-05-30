@@ -13,6 +13,8 @@
     {% endblock content %}
     <form method=post>
         <input type=submit name=download value='Download File'>
+        {% if hasPassword %}
         <input type=submit name=delete value='Delete File'>
+        {% endif %}
     </form>
 </div>
