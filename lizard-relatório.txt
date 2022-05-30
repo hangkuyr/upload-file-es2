@@ -2,11 +2,12 @@
   NLOC    CCN   token  PARAM  length  location  
 ------------------------------------------------
        2      1     12      1       2 setup_method@6-7@./Project/tests/test_db.py
-      10      1     58      1      10 test_dbSaveFile@9-18@./Project/tests/test_db.py
-       6      1     68      1       6 test_dbSorted@20-25@./Project/tests/test_db.py
-       5      1     67      1       5 test_ListDoesNotShowPasswordProtectedFiles@27-31@./Project/tests/test_db.py
-       4      1     53      1       4 test_dbSize@33-36@./Project/tests/test_db.py
-      10      1     60      1      10 test_deletePrivateDBItem@38-47@./Project/tests/test_db.py
+      10      1     58      1      10 test_dbSaveFile_one@9-18@./Project/tests/test_db.py
+      12      1     77      1      12 test_dbSaveFile_two@20-31@./Project/tests/test_db.py
+       6      1     68      1       6 test_dbSorted@34-39@./Project/tests/test_db.py
+       5      1     67      1       5 test_ListDoesNotShowPasswordProtectedFiles@41-45@./Project/tests/test_db.py
+       4      1     53      1       4 test_dbSize@47-50@./Project/tests/test_db.py
+      10      1     60      1      10 test_deletePrivateDBItem@52-61@./Project/tests/test_db.py
        3      1     23      1       3 setup_method@6-8@./Project/tests/test_pages.py
        3      1     22      1       3 test_TitleIndex@10-12@./Project/tests/test_pages.py
        6      1     48      1       6 setup_method@6-11@./Project/tests/test_uploads.py
@@ -69,7 +70,7 @@
 NLOC    Avg.NLOC  AvgCCN  Avg.token  function_cnt    file
 --------------------------------------------------------------
       9       0.0     0.0        0.0         0     ./Project/tests/includes.py
-     40       6.2     1.0       53.0         6     ./Project/tests/test_db.py
+     52       7.0     1.0       56.4         7     ./Project/tests/test_db.py
       9       3.0     1.0       22.5         2     ./Project/tests/test_pages.py
      85       5.2     1.1       44.8        16     ./Project/tests/test_uploads.py
       8       2.0     1.0        7.0         1     ./Project/tests/test_search.py
@@ -93,4 +94,4 @@ No thresholds exceeded (cyclomatic_complexity > 15 or length > 1000 or nloc > 10
 ==========================================================================================
 Total nloc   Avg.NLOC  AvgCCN  Avg.token   Fun Cnt  Warning cnt   Fun Rt   nloc Rt
 ------------------------------------------------------------------------------------------
-       423       5.3     1.6       40.6       63            0      0.00    0.00
+       435       5.4     1.6       41.1       64            0      0.00    0.00
