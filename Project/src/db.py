@@ -89,6 +89,18 @@ class DB:
     def getFilePassword(self, id):
         return self.db[id].password
 
+class RecentItem:
+    def __init__(self, link, title, timestamp):
+        self.link = link
+        self.title = title
+        self.timestamp = timestamp
+
+def GetItems(dbItems):
+    items = []
+    for id, dbItem in dbItems:
+        items.append(RecentItem(id, dbItem.title, TimestampToStr(dbItem.timestamp)))
+    return items
+
 from constants import*
 
 DB_FILE = PRIV_DIR + 'db.json'

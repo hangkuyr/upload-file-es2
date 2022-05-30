@@ -26,7 +26,15 @@
       10      1     82      1      12 test_CanDownloadPublicFile@83-94@./Project/tests/test_uploads.py
        6      1     42      3       6 test_Upload2PublicFiles.getDictionary@98-103@./Project/tests/test_uploads.py
        9      2     95      1      18 test_Upload2PublicFiles@96-113@./Project/tests/test_uploads.py
-       2      1      7      1       2 test_1@10-11@./Project/tests/test_search.py
+       7      1     49      5       7 getDict@10-16@./Project/tests/test_search.py
+       2      1     16      1       2 getItem1Pub@18-19@./Project/tests/test_search.py
+       2      1     16      1       2 getItem2Pub@21-22@./Project/tests/test_search.py
+       2      1     18      1       2 getItem1Priv@24-25@./Project/tests/test_search.py
+       3      1     23      1       3 setup_method@27-29@./Project/tests/test_search.py
+       8      1     58      1       8 test_search1Item@31-38@./Project/tests/test_search.py
+       8      2     82      1      10 test_search2Itens@40-49@./Project/tests/test_search.py
+       7      1     56      1       8 test_searchDoesNotReturnPrivateItem@51-58@./Project/tests/test_search.py
+      10      3    113      1      12 test_PubPrivPubReturns2Pubs@60-71@./Project/tests/test_search.py
        3      1     23      1       3 setup_method@6-8@./Project/tests/test_app.py
        2      1     18      1       2 test_AppIsInstantiated@10-11@./Project/tests/test_app.py
        2      1     19      1       2 test_IconIsPresent@13-14@./Project/tests/test_app.py
@@ -38,9 +46,7 @@
        5      1     18      0       8 GetUniqueFileId@8-15@./Project/src/pages/pHome.py
       24      8    162      0      31 mainPage@18-48@./Project/src/pages/pHome.py
       11      4     65      0      13 search@5-17@./Project/src/pages/search.py
-       4      1     26      4       4 __init__@5-8@./Project/src/pages/recent.py
-       5      2     38      1       5 GetItems@10-14@./Project/src/pages/recent.py
-       3      1     26      0       3 recentCallback@17-19@./Project/src/pages/recent.py
+       3      1     26      0       3 recentCallback@5-7@./Project/src/pages/recent.py
        4      2     27      1       4 uploadsPath.hasCorrectCookie@17-20@./Project/src/pages/uploads.py
       18      4    127      0      25 uploadsPath.getPageTemplate@22-46@./Project/src/pages/uploads.py
        2      2     22      0       2 uploadsPath.canSendFile@60-61@./Project/src/pages/uploads.py
@@ -65,6 +71,8 @@
        2      1     13      1       5 size@77-81@./Project/src/db.py
        2      1     19      2       2 isPasswordProtected@86-87@./Project/src/db.py
        2      1     16      2       2 getFilePassword@88-89@./Project/src/db.py
+       4      1     26      4       4 __init__@92-95@./Project/src/db.py
+       5      2     38      1       5 GetItems@97-101@./Project/src/db.py
 19 file analyzed.
 ==============================================================
 NLOC    Avg.NLOC  AvgCCN  Avg.token  function_cnt    file
@@ -73,12 +81,12 @@ NLOC    Avg.NLOC  AvgCCN  Avg.token  function_cnt    file
      52       7.0     1.0       56.4         7     ./Project/tests/test_db.py
       9       3.0     1.0       22.5         2     ./Project/tests/test_pages.py
      85       5.2     1.1       44.8        16     ./Project/tests/test_uploads.py
-      8       2.0     1.0        7.0         1     ./Project/tests/test_search.py
+     55       5.4     1.3       47.9         9     ./Project/tests/test_search.py
      19       2.1     1.0       19.4         7     ./Project/tests/test_app.py
       4       2.0     1.0        9.0         1     ./Project/src/pages/about.py
      35      14.5     4.5       90.0         2     ./Project/src/pages/pHome.py
      14      11.0     4.0       65.0         1     ./Project/src/pages/search.py
-     16       4.0     1.3       30.0         3     ./Project/src/pages/recent.py
+      6       3.0     1.0       26.0         1     ./Project/src/pages/recent.py
      72      17.0     5.2      106.2         4     ./Project/src/pages/uploads.py
       8       2.0     1.0       10.0         1     ./Project/src/pages/searchResult.py
       4       2.0     1.0       10.0         1     ./Project/src/pages/pError404.py
@@ -87,11 +95,11 @@ NLOC    Avg.NLOC  AvgCCN  Avg.token  function_cnt    file
       5       0.0     0.0        0.0         0     ./Project/src/constants.py
      14       4.0     1.0       18.0         1     ./Project/src/app.py
       5       0.0     0.0        0.0         0     ./Project/src/main.py
-     64       4.2     1.8       38.9        12     ./Project/src/db.py
+     74       4.3     1.7       37.9        14     ./Project/src/db.py
 
 ===============================================================================================================
 No thresholds exceeded (cyclomatic_complexity > 15 or length > 1000 or nloc > 1000000 or parameter_count > 100)
 ==========================================================================================
 Total nloc   Avg.NLOC  AvgCCN  Avg.token   Fun Cnt  Warning cnt   Fun Rt   nloc Rt
 ------------------------------------------------------------------------------------------
-       435       5.4     1.6       41.1       64            0      0.00    0.00
+       482       5.5     1.6       42.5       72            0      0.00    0.00
