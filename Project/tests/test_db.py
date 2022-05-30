@@ -96,3 +96,23 @@ class TestDB:
 		self.db._saveFileImpl('id2', 'filename', 'title', 'desc', b'data', 'password')
 		items = self.db.findPublicDBItemsByTitle('titl')
 		assert len(items) == 0
+
+	def test_caseSensitive(self):
+		self.db._saveFileImpl('id2', 'filename', 'title', 'desc', b'data', '')
+		items = self.db.findPublicDBItemsByTitle('TITLE')
+		assert len(items) == 0
+
+	def test_SameTitle(self):
+		self.db._saveFileImpl('id2', 'filename', 'custom title', 'desc', b'data', '')
+		items = self.db.findPublicDBItemsByTitle('custom title')
+		assert len(items) == 1
+
+	def test_PartialTitle(self):
+		self.db._saveFileImpl('id2', 'filename', 'custom title', 'desc', b'data', '')
+		items = self.db.findPublicDBItemsByTitle('custom')
+		assert len(items) == 1
+
+	def test_TitleTooBig(self):
+		self.db._saveFileImpl('id2', 'filename', 'custom title', 'desc', b'data', '')
+		items = self.db.findPublicDBItemsByTitle('custom title ')
+		assert len(items) == 0
