@@ -34,3 +34,14 @@ class TestDB:
 		self.db._saveFileImpl('i1', 'f1', 't1', 'd1', b'b1', 'p1')
 		self.db._saveFileImpl('i2', 'f2', 't2', 'd2', b'b2', 'p2')
 		assert self.db.size() == 2
+
+	def test_deletePrivateDBItem(self):
+		id = 'id teste'
+		filename = 'teste.txt'
+		title = 'título teste'
+		desc = 'desc teste'
+		data = b'teste bytes'
+		password = 'teste password'
+		self.db._saveFileImpl(id, filename, title, desc, data, password)
+		self.db.deletePrivateDBItem(id)
+		assert self.db.size() == 0
