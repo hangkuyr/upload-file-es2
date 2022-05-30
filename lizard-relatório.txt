@@ -41,7 +41,7 @@
        4      2     27      1       4 uploadsPath.hasCorrectCookie@17-20@./Project/src/pages/uploads.py
       17      4    117      0      24 uploadsPath.getPageTemplate@22-45@./Project/src/pages/uploads.py
        2      2     22      0       2 uploadsPath.canSendFile@59-60@./Project/src/pages/uploads.py
-      44     13    246      1      80 uploadsPath@10-89@./Project/src/pages/uploads.py
+      44     13    249      1      80 uploadsPath@10-89@./Project/src/pages/uploads.py
        2      1     10      1       2 searchResult@9-10@./Project/src/pages/searchResult.py
        2      1     10      1       2 not_found@4-5@./Project/src/pages/pError404.py
        2      1      9      1       2 GetCookieName@3-4@./Project/src/cookies.py
@@ -75,7 +75,7 @@ NLOC    Avg.NLOC  AvgCCN  Avg.token  function_cnt    file
      35      14.5     4.5       90.0         2     ./Project/src/pages/pHome.py
      14      11.0     4.0       65.0         1     ./Project/src/pages/search.py
      16       4.0     1.3       30.0         3     ./Project/src/pages/recent.py
-     71      16.8     5.2      103.0         4     ./Project/src/pages/uploads.py
+     71      16.8     5.2      103.8         4     ./Project/src/pages/uploads.py
       8       2.0     1.0       10.0         1     ./Project/src/pages/searchResult.py
       4       2.0     1.0       10.0         1     ./Project/src/pages/pError404.py
       2       2.0     1.0        9.0         1     ./Project/src/cookies.py
