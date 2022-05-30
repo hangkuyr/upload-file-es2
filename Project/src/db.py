@@ -34,7 +34,8 @@ class DB:
         self._saveFileImpl(id, file.filename, title, desc, file.read(), password)
 
     def deletePrivateDBItem(self, id):
-        del self.db[id]
+        if self.isPasswordProtected(id):
+            del self.db[id]
 
     def findPublicDBItemsByTitle(self, title):
         files = []
