@@ -1,4 +1,3 @@
-from operator import getitem
 from includes import*
 from app import*
 
