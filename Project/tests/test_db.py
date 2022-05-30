@@ -73,3 +73,26 @@ class TestDB:
 		self.db._saveFileImpl(id2, filename2, title2, '', data2, '')
 		self.db.deletePrivateDBItem(id)
 		assert self.db.size() == 2
+
+	def test_findFileByTitle(self):
+		self.db._saveFileImpl('id', 'filename', 'title', 'desc', b'data', '')
+		items = self.db.findPublicDBItemsByTitle('titl')
+		assert len(items) == 1
+
+	def test_findsFilesByTitle(self):
+		self.db._saveFileImpl('id', 'filename', 'title', 'desc', b'data', '')
+		self.db._saveFileImpl('id2', 'filename', 'title', 'desc', b'data', '')
+		items = self.db.findPublicDBItemsByTitle('titl')
+		assert len(items) == 2
+
+	def test_findsSomeFilesByTitle(self):
+		self.db._saveFileImpl('id', 'filename', 'title', 'desc', b'data', '')
+		self.db._saveFileImpl('id2', 'filename', 'title', 'desc', b'data', 'password')
+		self.db._saveFileImpl('id3', 'filename', 'title', 'desc', b'data', '')
+		items = self.db.findPublicDBItemsByTitle('titl')
+		assert len(items) == 2
+
+	def test_notFindPrivateFiles(self):
+		self.db._saveFileImpl('id2', 'filename', 'title', 'desc', b'data', 'password')
+		items = self.db.findPublicDBItemsByTitle('titl')
+		assert len(items) == 0
