@@ -7,9 +7,9 @@ permissions: write-all
 
 on:
   push:
-    branches: [ main, test_e2e ]
+    branches: [ main, test-e2e ]
   pull_request:
-    branches: [ main, test_e2e ]
+    branches: [ main, test-e2e ]
 
 jobs:
   build:
