@@ -4,8 +4,6 @@ from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.service import Service
 import chromedriver_autoinstaller
 
-    
-
 def test_first_case_selenium():
 
 	chromedriver_autoinstaller.install()
@@ -19,7 +17,6 @@ def test_first_case_selenium():
 	 
 	    "--headless",
 	    #"--disable-gpu",
-	    "--window-size=1920,1200",
 	    #"--ignore-certificate-errors",
 	    #"--disable-extensions",
 	    "--no-sandbox",
@@ -33,6 +30,5 @@ def test_first_case_selenium():
     
 	driver = webdriver.Chrome(options = chrome_options)
 	
-	driver.get("localhost:8000")
-	#driver.get("http://127.0.0.1")
+	driver.get("http://127.0.0.1:80")
 	assert "Upload File" in driver.title
