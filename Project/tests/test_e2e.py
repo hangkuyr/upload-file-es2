@@ -7,7 +7,7 @@ from pyvirtualdisplay import Display
 
     
 
-def test_first_case_selenium(self):
+def test_first_case_selenium():
 
 	display = Display(visible=0, size=(800, 800))  
 	display.start()
