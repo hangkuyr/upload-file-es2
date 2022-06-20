@@ -1,36 +1,41 @@
 import pytest
+from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.service import Service
-from webdriver_manager.chrome import ChromeDriverManager
-from webdriver_manager.utils import ChromeType
-from selenium import webdriver
+import chromedriver_autoinstaller
+from pyvirtualdisplay import Display
 
-@pytest.fixture
-def setup(request):
-    chrome_service = Service(ChromeDriverManager(chrome_type=ChromeType.GOOGLE).install())
+    
 
-    chrome_options = Options()
-    options = [
-    "--headless",
-    "--disable-gpu",
-    "--window-size=1920,1200",
-    "--ignore-certificate-errors",
-    "--disable-extensions",
-    "--no-sandbox",
-    "--disable-dev-shm-usage"
-]
-    for option in options:
-        chrome_options.add_argument(option)
-
-    request.cls.driver = webdriver.Chrome(service=chrome_service, options=chrome_options)
-
-
-    yield request.cls.driver
-    request.cls.driver.close()
-
-@pytest.mark.usefixtures("setup")
 def test_first_case_selenium(self):
+
+	display = Display(visible=0, size=(800, 800))  
+	display.start()
+
+	chromedriver_autoinstaller.install()
+
+	chrome_options = webdriver.ChromeOptions()    
+	# Add your options as needed    
+	options = [
+	  # Define window size here
+	   "--window-size=1200,1200",
+	    "--ignore-certificate-errors"
+	 
+	    "--headless",
+	    #"--disable-gpu",
+	    #"--window-size=1920,1200",
+	    #"--ignore-certificate-errors",
+	    #"--disable-extensions",
+	    "--no-sandbox",
+	    "--disable-dev-shm-usage",
+	    #'--remote-debugging-port=9222'
+	]
+
+	for option in options:
+	    chrome_options.add_argument(option)
+
+    
+	driver = webdriver.Chrome(options = chrome_options)
 	
-	self.driver.get("http://127.0.0.1:80")
-	self.driver.maximize_window()
+	driver.get("http://127.0.0.1:80")
 	assert "Upload File" == self.driver.title
