@@ -38,9 +38,22 @@ jobs:
         # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
 
-    - name: Test with pytest
+    - name: Tests Coverage
       run: |
-        pytest
+        pip install coverage
+        coverage run -m pytest
+
+    - name: Upload coverage to Codecov
+      uses: codecov/codecov-action@v2
+      with:
+        directory: ./coverage/reports/
+        env_vars: OS,PYTHON
+        fail_ci_if_error: true
+        files: ./coverage1.xml,./coverage2.xml
+        flags: pytest
+        name: codecov-umbrella
+        path_to_write_report: ./coverage/codecov_report.txt
+        verbose: true
 
     - name: Generate report with lizard
       run: lizard > lizard-relatório.txt
@@ -51,3 +64,4 @@ jobs:
           file-path: lizard-relatório.txt
           commit-msg: Auto generated lizard report
           github-token: ${{ secrets.GITHUB_TOKEN }}    
+
