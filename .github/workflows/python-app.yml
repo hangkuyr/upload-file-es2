@@ -45,17 +45,7 @@ jobs:
 
     - name: Upload coverage to Codecov
       uses: codecov/codecov-action@v2
-      with:
-        token: 51052171-feda-4ee8-96b2-216f7178873d
-        directory: ./coverage/reports/
-        env_vars: OS,PYTHON
-        fail_ci_if_error: true
-        files: ./coverage1.xml,./coverage2.xml
-        flags: pytest
-        name: codecov-umbrella
-        verbose: true
-        version: "v0.1.15"
-
+      
     - name: Generate report with lizard
       run: lizard > lizard-relatório.txt
 
