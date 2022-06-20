@@ -38,4 +38,4 @@ def test_first_case_selenium():
 	driver = webdriver.Chrome(options = chrome_options)
 	
 	driver.get("localhost:80")
-	assert "Upload File" == driver.title
+	assert " Upload File" == driver.title
