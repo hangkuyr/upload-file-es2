@@ -34,5 +34,5 @@ def test_first_case_selenium():
     
 	driver = webdriver.Chrome(options = chrome_options)
 	
-	driver.get("127.0.0.1")
+	driver.get("https://upload-file-es2.herokuapp.com/")
 	assert "Upload File" in driver.title
