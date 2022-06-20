@@ -1,16 +1,36 @@
 import pytest
+from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.chrome.service import Service
+from webdriver_manager.chrome import ChromeDriverManager
+from webdriver_manager.utils import ChromeType
 from selenium import webdriver
 
 @pytest.fixture
-def browser():
-	driver = webdriver.Firefox()
+def setup(request):
+    chrome_service = Service(ChromeDriverManager(chrome_type=ChromeType.GOOGLE).install())
 
-	yield driver
+    chrome_options = Options()
+    options = [
+    "--headless",
+    "--disable-gpu",
+    "--window-size=1920,1200",
+    "--ignore-certificate-errors",
+    "--disable-extensions",
+    "--no-sandbox",
+    "--disable-dev-shm-usage"
+]
+    for option in options:
+        chrome_options.add_argument(option)
 
-	driver.quit()
+    request.cls.driver = webdriver.Chrome(service=chrome_service, options=chrome_options)
 
-def test_first_case_selenium(browser):
+
+    yield request.cls.driver
+    request.cls.driver.close()
+
+@pytest.mark.usefixtures("setup")
+def test_first_case_selenium(self):
 	
-	browser.get("http://127.0.0.1:80")
-	browser.maximize_window()
-	assert "Upload File" == browser.title
+	self.driver.get("http://127.0.0.1:80")
+	self.driver.maximize_window()
+	assert "Upload File" == self.driver.title
