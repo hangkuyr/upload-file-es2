@@ -7,9 +7,9 @@ permissions: write-all
 
 on:
   push:
-    branches: [ main ]
+    branches: [ main, coverage ]
   pull_request:
-    branches: [ main ]
+    branches: [ main, coverage ]
 
 jobs:
   build:
